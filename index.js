@@ -1,14 +1,12 @@
 const express = require('express');
 
 const dataRouter = require('./routers/data-router.js');
-// const commentRouter = require('./routers/comment-router.js');
 
 const server = express();
 
 server.use(express.json());
 
 server.use('/api/posts', dataRouter);
-// server.use('/api/comments', commentRouter);
 
 server.get('/', (req, res) => {
     res.send(`
